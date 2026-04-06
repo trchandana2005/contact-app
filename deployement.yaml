@@ -54,4 +54,8 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+<<<<<<< HEAD
       nodePort: 30007
+=======
+      nodePort: 30007
+>>>>>>> a5feb2e38365c9dee6992b51511e99aa96149381
