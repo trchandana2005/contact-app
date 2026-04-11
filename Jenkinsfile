@@ -22,7 +22,11 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 6060:8080 parking-app'
+                bat '''
+                docker stop parking-container || echo no container
+                docker rm parking-container || echo no container
+                docker run -d -p 7075:8080 --name parking-container parking-app
+                '''
             }
         }
     }
