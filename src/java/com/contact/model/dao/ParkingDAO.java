@@ -1,5 +1,5 @@
 package com.parking.dao;
-// test pipeline
+// test pipeline-
 import com.parking.model.ParkingSlot;
 import java.util.*;
 
@@ -46,8 +46,3 @@ public class ParkingDAO {
     }
 }
 
-    // DELETE
-    public void deleteContact(int id) {
-        contacts.removeIf(c -> c.getId() == id);
-    }
-}
