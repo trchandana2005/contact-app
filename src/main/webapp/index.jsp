@@ -1,17 +1,34 @@
 <html>
+<head>
+    <title>Smart Parking System</title>
+</head>
 <body>
 
-<h2>Add Contact</h2>
+<h2>Book Parking Slot</h2>
 
-<form action="contacts" method="post">
-    Name: <input type="text" name="name"><br>
-    Email: <input type="text" name="email"><br>
-    Phone: <input type="text" name="phone"><br>
-    <input type="submit" value="Add Contact">
+<form action="parking" method="post">
+    Enter Slot Number (1-10):
+    <input type="text" name="slot"><br><br>
+
+    <input type="submit" value="Book Slot">
 </form>
 
-<br>
-<a href="contacts">View Contacts</a>
+<br><br>
+
+<h3>Check Parking Status</h3>
+<a href="parking">View All Slots</a>
+
+<br><br>
+
+<h3>Free a Slot</h3>
+
+<form action="parking" method="post">
+    <input type="hidden" name="_method" value="delete">
+    Enter Slot Number:
+    <input type="text" name="slot"><br><br>
+
+    <input type="submit" value="Free Slot">
+</form>
 
 </body>
 </html>
