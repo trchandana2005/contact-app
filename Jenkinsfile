@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/trchandana2005/contact-app'
+            }
+        }
+
         stage('Build') {
             steps {
                 bat 'mvn clean package'
@@ -16,17 +23,13 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t parking-app .'
+                bat 'docker build -t payment-app .'
             }
         }
 
         stage('Run Container') {
             steps {
-                bat '''
-                docker stop parking-container || echo no container
-                docker rm parking-container || echo no container
-                docker run -d -p 7075:8080 --name parking-container parking-app
-                '''
+                bat 'docker run -d -p 7071:8080 payment-app'
             }
         }
     }
